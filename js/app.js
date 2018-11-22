@@ -29,6 +29,61 @@ Enemy.prototype.render = function() {
  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//--------------------------------------------Player Class---------------------------------------------
+
+var Player = function (x, y){
+     this.x = x;
+     this.y = y;
+     this.sprite = 'images/char-cat-girl.png';
+};
+
+// Update the Player's position
+Player.prototype.update = function() {
+
+//when the player reachs the edges of the canvas 
+    if (player.x > 400){
+             player.x = 400;
+     } 
+    if (player.x < 0 ){
+             player.x = 0;
+     } 
+    if (player.y > 400){
+             player.y = 400;
+     }
+// when the player reach the water [win]   
+    if (player.y < 0){
+             player.x = 200;
+             player.y = 400;
+// calling levelIncrement that will increase the level
+             this.levelIncrement();
+     }
+};
+
+// Draw the Player on the screen 
+Player.prototype.render = function() {
+ ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+
+// handleInput() method.
+Player.prototype.handleInput = function(arrowKeys){
+
+
+    if (arrowKeys == 'up'){
+        this.y -= 90;
+    }
+    if (arrowKeys == 'down'){
+         this.y += 90;
+    }
+    if (arrowKeys == 'right'){
+        this.x += 101;
+    }
+    if (arrowKeys == 'left'){
+        this.x -= 101;
+    }
+
+};
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
