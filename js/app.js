@@ -29,6 +29,21 @@ Enemy.prototype.render = function() {
  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//--------------------------------------------Check Collision---------------------------------------------
+Enemy.prototype.checkCollision = function() {
+
+     if (player.x < this.x + 80  &&
+         player.x + 80  > this.x &&
+         player.y < this.y + 60  &&
+         player.y + 60 > this.y){
+
+         player.x = 200;
+         player.y = 400;
+// Calling the level Decrement function that will decrease the level when the collision occur
+         this.levelDecrement();
+    }
+};
+
 //--------------------------------------------Player Class---------------------------------------------
 
 var Player = function (x, y){
