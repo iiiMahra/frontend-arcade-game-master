@@ -165,3 +165,19 @@ var Lives = function(x, y) {
 Lives.prototype.render = function () {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y, this.width, this.height);
 };
+
+//--------------------------------------------Creating objects---------------------------------------------
+//Enemies objects:
+var allEnemies = [];
+var enemy = new Enemy(0, 55, 100)
+var enemy2 = new Enemy(0, 144, 150)
+var enemy3 = new Enemy(0, 233, 200)
+allEnemies.push(enemy,enemy2,enemy3);
+//player object:
+var player = new Player(200, 400)
+//Lives obkects:
+let allLives = [];
+var life = new Lives(40, 0);
+var life2 = new Lives(80, 0);
+var life3 = new Lives(120, 0);
+allLives.push(life,life2,life3);
