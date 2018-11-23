@@ -1,3 +1,5 @@
+const levelCounter = document.querySelector('.level');
+let level = 0;
 //--------------------------------------------Enemy Class---------------------------------------------
 
 var Enemy = function(x, y, speed) {
