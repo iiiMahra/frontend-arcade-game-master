@@ -127,6 +127,15 @@ Player.prototype.handleInput = function(arrowKeys){
 
 };
 
+//--------------------------------------------increment level---------------------------------------------
+
+// when the player collides with enemy:
+Player.prototype.levelIncrement = function() {
+
+    level++;
+// adding the number moves into the screen
+    levelCounter.innerHTML = 'Level:'+level;
+};
 
 
 // This listens for key presses and sends the keys to your
