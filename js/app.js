@@ -138,19 +138,6 @@ Player.prototype.levelIncrement = function() {
 };
 
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
-    };
-
-    player.handleInput(allowedKeys[e.keyCode]);
-});
-
 //--------------------------------------------Lives Class---------------------------------------------
 
 var Lives = function(x, y) {
@@ -181,3 +168,16 @@ var life = new Lives(40, 0);
 var life2 = new Lives(80, 0);
 var life3 = new Lives(120, 0);
 allLives.push(life,life2,life3);
+//----------------------------------------------------------------------------------------------------------
+// This listens for key presses and sends the keys to your
+// Player.handleInput() method. You don't need to modify this.
+document.addEventListener('keyup', function(e) {
+    var allowedKeys = {
+        37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down'
+    };
+
+    player.handleInput(allowedKeys[e.keyCode]);
+});
