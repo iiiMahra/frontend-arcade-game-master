@@ -150,3 +150,18 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+//--------------------------------------------Lives Class---------------------------------------------
+
+var Lives = function(x, y) {
+
+    this.x = x;
+    this.y = y;
+    this.width = 30;
+    this.height = 55;
+    this.sprite = 'images/Heart.png';
+};
+
+Lives.prototype.render = function () {
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y, this.width, this.height);
+};
