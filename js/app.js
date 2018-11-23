@@ -43,6 +43,34 @@ Enemy.prototype.checkCollision = function() {
          this.levelDecrement();
     }
 };
+//--------------------------------------------decrement level---------------------------------------------
+
+// when the player collides with enemy:
+Enemy.prototype.levelDecrement = function() {
+
+    level--;
+    if (level <= 0){
+        level = 0;
+// Decrease the lives    
+        allLives.pop(); 
+// Game over: when the player lose all the lives
+        if (allLives.length === 0){
+            swal(
+            {// the alert from https://sweetalert2.github.io/
+              type: 'error',
+              title: 'Oops!!...',
+              text: 'Game over',
+            });
+// when the user click the play again button in the alert
+            allLives.push(life,life2,life3);
+            this.x = -150;
+        }   
+ }
+// adding the level into the screen
+ levelCounter.innerHTML = 'Level: '+level; 
+
+
+};
 
 //--------------------------------------------Player Class---------------------------------------------
 
